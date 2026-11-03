@@ -1,0 +1,9 @@
+{
+  "title": "Radio",
+  "playing": "Playing",
+  "stopped": "Stopped",
+  "no_stations": "Add a station in the module's settings.",
+  "not_found": "Can't find the station. Check its name, or give its address.",
+  "stream_failed": "The station doesn't answer. Trying again.",
+  "no_player": "Can't play sound here."
+}

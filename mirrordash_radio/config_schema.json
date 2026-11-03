@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Radio",
+  "description": "Internet radio through the mirror's speakers: Sveriges Radio and stations worldwide, with what's on now.",
+  "type": "object",
+  "properties": {
+    "stations": {
+      "type": "array",
+      "title": "Stations",
+      "description": "The stations, in the order a double press steps through them.",
+      "default": [{"station": "Sveriges Radio P1"}, {"station": "Sveriges Radio P3"}],
+      "items": {
+        "type": "object",
+        "properties": {
+          "station": {
+            "type": "string",
+            "title": "Station",
+            "description": "Its name, such as Sveriges Radio P4 Göteborg or Mix Megapol, looked up in Radio Browser; or the stream's address (https://…)."
+          }
+        },
+        "required": ["station"]
+      }
+    },
+    "volume": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 35,
+      "title": "Volume",
+      "description": "How loud, as it sounds (0-100). The Settings tab's volume sets the whole mirror's."
+    },
+    "output": {
+      "type": "string",
+      "enum": ["jack", "hdmi"],
+      "enum_titles": ["3.5 mm jack", "The screen (HDMI)"],
+      "default": "jack",
+      "title": "Speakers",
+      "description": "Where the sound goes. The screen only if it has speakers: one without them stays silent."
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false,
+      "title": "Play When Shown",
+      "description": "Start playing when the mirror starts. It stops while the screen is off or the module is hidden (its schedule, privacy mode) and plays again after."
+    },
+    "button": {
+      "type": "string",
+      "enum": ["", "button", "button_2", "button_3", "button_4"],
+      "enum_titles": ["None", "Button 1", "Button 2", "Button 3", "Button 4"],
+      "default": "",
+      "title": "Button",
+      "description": "The mirror's button that controls the radio: one press plays or stops, two go to the next station. Set that button's own actions to nothing in the Hardware tab."
+    },
+    "show_logo": {
+      "type": "boolean",
+      "default": true,
+      "title": "Show Logo",
+      "description": "The station's logo, in gray."
+    },
+    "show_header": {
+      "type": "boolean",
+      "default": false,
+      "title": "Show Header",
+      "description": "Show or hide the module's title."
+    },
+    "token": {
+      "type": "string",
+      "format": "password",
+      "default": "",
+      "title": "Token",
+      "description": "Optional: lets a phone shortcut start, stop or send a stream to the radio (see its README). Empty: nobody can."
+    }
+  },
+  "exposes": {
+    "playing": {"type": "switch", "title": "Playing", "control": true},
+    "next_station": {"type": "button", "title": "Next station", "control": true},
+    "volume": {"type": "number", "title": "Volume", "min": 0, "max": 100, "step": 1, "control": true},
+    "play_url": {"type": "text", "title": "Play address", "format": "url", "maxLength": 255, "control": true},
+    "station": {"type": "sensor", "title": "Station"},
+    "now_playing": {"type": "sensor", "title": "Now playing"}
+  }
+}

@@ -1,0 +1,49 @@
+<!-- Built from the component library at http://localhost:8000/design. Still between updates: no motion. -->
+<style>
+    .radio { display: flex; align-items: center; gap: var(--internal-padding, 16px); min-width: 0; }
+    /* A logo is often a light square: small, gray and dimmed, so it doesn't light up the glass */
+    .radio__logo {
+        width: 4em; height: 4em; flex: none; object-fit: contain; border-radius: 4px;
+        filter: grayscale(1) brightness(0.8); opacity: 0.85;
+    }
+    .radio__logo--empty { display: flex; align-items: center; justify-content: center; color: var(--color-dimmed-charcoal); }
+    .radio__text { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+    .radio__station {
+        font-size: 24px; font-weight: 500; line-height: 1.2; color: var(--color-high-contrast);
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .radio__line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .radio__state { display: flex; align-items: center; gap: 6px; }
+    .radio__state svg { width: 14px; height: 14px; flex: none; }
+</style>
+
+<div class="flex-column">
+    {% if show_header %}
+    <h2 class="module-header">{{ translations.get("title", "Radio") }}</h2>
+    {% endif %}
+    {% if station %}
+    <div class="radio">
+        {% if show_logo %}
+        {% if station.logo %}
+        <img class="radio__logo" src="{{ station.logo }}" alt="">
+        {% else %}
+        <div class="radio__logo radio__logo--empty"><i data-lucide="radio"></i></div>
+        {% endif %}
+        {% endif %}
+        <div class="radio__text">
+            <span class="radio__station">{{ station.name }}</span>
+            {% if title %}<span class="radio__line body-base text-secondary">{{ title }}</span>{% endif %}
+            <span class="radio__state body-sm text-dimmed">
+                {% if playing %}
+                <i data-lucide="play"></i><span>{{ translations.get("playing", "Playing") }}</span>
+                {% else %}
+                <i data-lucide="square"></i><span>{{ translations.get("stopped", "Stopped") }}</span>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+    {% endif %}
+    {% if message %}
+    <div class="module-message"><i data-lucide="radio"></i><span>{{ message }}</span></div>
+    {% endif %}
+</div>

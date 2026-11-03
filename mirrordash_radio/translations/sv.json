@@ -1,0 +1,9 @@
+{
+  "title": "Radio",
+  "playing": "Spelar",
+  "stopped": "Stoppad",
+  "no_stations": "Lägg till en station i modulens inställningar.",
+  "not_found": "Hittar inte stationen. Kontrollera namnet eller ange adressen.",
+  "stream_failed": "Stationen svarar inte. Försöker igen.",
+  "no_player": "Kan inte spela ljud här."
+}

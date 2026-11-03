@@ -1,6 +1,6 @@
 [project]
 name = "mirrordash-radio"
-version = "0.1.0"
+version = "1.0.0"
 description = "Internet radio on the mirror: Sveriges Radio and stations worldwide, with what's on now"
 requires-python = ">=3.14"
 license = "MIT"  # LICENSE: yours to change; the template it came from asks nothing (MIT-0)

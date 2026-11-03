@@ -59,7 +59,7 @@ token set, nobody can.
 | Setting | What it does |
 | :--- | :--- |
 | Stations | Names to look up, or stream addresses. |
-| Volume | 0–100, as it sounds. The Settings tab's volume is the whole mirror's. |
+| Volume | 0–100, as it sounds. *System Volume* in the Hardware tab is the whole mirror's. |
 | Speakers | The 3.5 mm jack, or the screen over HDMI. A screen without speakers stays silent, without an error. |
 | Play When Shown | Play from the start. |
 | Button | The mirror's button that plays, stops and steps. |

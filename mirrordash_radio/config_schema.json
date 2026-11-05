@@ -23,6 +23,7 @@
     },
     "volume": {
       "type": "integer",
+      "format": "slider",
       "minimum": 0,
       "maximum": 100,
       "default": 35,

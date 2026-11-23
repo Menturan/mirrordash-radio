@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Radio",
+  "requires_mirrordash": "0.13",
   "description": "Internet radio through the mirror's speakers: Sveriges Radio and stations worldwide, with what's on now.",
   "type": "object",
   "properties": {

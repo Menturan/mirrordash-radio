@@ -43,7 +43,8 @@
       "type": "boolean",
       "default": false,
       "title": "Play When Shown",
-      "description": "Start playing when the mirror starts. It stops while the screen is off or the module is hidden (its schedule, privacy mode) and plays again after."
+      "description": "Start playing when the mirror starts.",
+      "help": "It stops while the screen is off or the module is hidden (its schedule, privacy mode) and plays again after."
     },
     "button": {
       "type": "string",
@@ -51,7 +52,8 @@
       "enum_titles": ["None", "Button 1", "Button 2", "Button 3", "Button 4"],
       "default": "",
       "title": "Button",
-      "description": "The mirror's button that controls the radio: one press plays or stops, two go to the next station. Set that button's own actions to nothing in the Hardware tab."
+      "description": "The mirror's button that controls the radio: one press plays or stops, two go to the next station.",
+      "help": "Set that button's own actions to nothing in the Hardware tab."
     },
     "show_logo": {
       "type": "boolean",

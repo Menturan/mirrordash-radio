@@ -19,7 +19,7 @@
 
 <div class="flex-column">
     {% if show_header %}
-    <h2 class="module-header">{{ translations.get("title", "Radio") }}</h2>
+    <h2 class="module-header">{{ heading or translations.get("title", "Radio") }}</h2>
     {% endif %}
     {% if station %}
     <div class="radio">

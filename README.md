@@ -41,7 +41,7 @@ comes back, if it played before. The station and whether it plays outlast a rest
 
 ## A phone shortcut (optional)
 
-Set a **Token** in the module's settings. Then a shortcut on your phone (iOS Shortcuts, Android's HTTP
+Set an **Access token** in the module's settings. Then a shortcut on your phone (iOS Shortcuts, Android's HTTP
 Shortcuts) can control the radio on your home network:
 
 ```bash
@@ -64,7 +64,7 @@ token set, nobody can.
 | Play When Shown | Play from the start. |
 | Button | The mirror's button that plays, stops and steps. |
 | Show Logo | The station's logo, small and gray. |
-| Token | For a phone shortcut. |
+| Access token | For a phone shortcut. |
 
 ## Develop
 

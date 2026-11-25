@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Radio",
-  "requires_mirrordash": "0.13",
+  "requires_mirrordash": "0.21",
   "description": "Internet radio through the mirror's speakers: Sveriges Radio and stations worldwide, with what's on now.",
   "type": "object",
   "properties": {
@@ -9,7 +9,10 @@
       "type": "array",
       "title": "Stations",
       "description": "The stations, in the order a double press steps through them.",
-      "default": [{"station": "Sveriges Radio P1"}, {"station": "Sveriges Radio P3"}],
+      "default": [
+        {"station": "Sveriges Radio P1"},
+        {"station": "Sveriges Radio P3"}
+      ],
       "items": {
         "type": "object",
         "properties": {
@@ -19,7 +22,8 @@
             "description": "Its name, such as Sveriges Radio P4 Göteborg or Mix Megapol, looked up in Radio Browser; or the stream's address (https://…)."
           }
         },
-        "required": ["station"]
+        "required": ["station"],
+        "title": "Station"
       }
     },
     "volume": {
@@ -42,7 +46,7 @@
     "autoplay": {
       "type": "boolean",
       "default": false,
-      "title": "Play When Shown",
+      "title": "Play when shown",
       "description": "Start playing when the mirror starts.",
       "help": "It stops while the screen is off or the module is hidden (its schedule, privacy mode) and plays again after."
     },
@@ -58,21 +62,16 @@
     "show_logo": {
       "type": "boolean",
       "default": true,
-      "title": "Show Logo",
+      "title": "Show logo",
       "description": "The station's logo, in gray."
     },
-    "show_header": {
-      "type": "boolean",
-      "default": false,
-      "title": "Show Header",
-      "description": "Show or hide the module's title."
-    },
+    "show_header": {"default": false},
     "token": {
       "type": "string",
       "format": "password",
       "default": "",
-      "title": "Token",
-      "description": "Optional: lets a phone shortcut start, stop or send a stream to the radio (see its README). Empty: nobody can."
+      "title": "Access token",
+      "description": "Lets a phone shortcut start, stop or send a stream to the radio (see its README). Empty: nobody can."
     }
   },
   "exposes": {

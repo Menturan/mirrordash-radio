@@ -83,7 +83,6 @@ class RadioModule:
         self.output = OUTPUTS.get(config.get("output"), OUTPUTS["jack"])
         self.autoplay = config.get("autoplay", False)
         self.show_logo = config.get("show_logo", True)
-        self.show_header = config.get("show_header", False)
         self.button = config.get("button", "")  # which of the mirror's buttons controls it; "" none
         self.token = config.get("token", "")
 
@@ -122,7 +121,7 @@ class RadioModule:
             raise
 
     async def render(self) -> str:
-        context = {"show_logo": self.show_logo, "show_header": self.show_header}
+        context = {"show_logo": self.show_logo}
         if self.preview:
             return self.render_template("widget.html", station=EXAMPLE, title=EXAMPLE["title"], playing=True,
                                         message=None, **context)
